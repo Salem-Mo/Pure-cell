@@ -5,27 +5,27 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 const features = [
   {
     id: 1,
-    title: "جهاز PureTech AI المطور",
-    description: "نظام ذكي يعتمد على خوارزميات التعلم الآلي لرفع كفاءة الاحتراق وتقليل الاستهلاك بنسبة تصل إلى 30%.",
+    title: "جهاز PureTech V1.5 المطوّر",
+    description: "الجيل الأحدث من تكنولوجيا توفير الوقود، يعمل على تحسين كفاءة الاحتراق الداخلي للمحرك مما يقلل الاستهلاك بنسبة تصل إلى 30% ويرفع أداء السيارة بشكل ملحوظ.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600",
   },
   {
     id: 2,
-    title: "تحسين البيئة بالذكاء الاصطناعي",
-    description: "حلول بيئية مدعومة بالذكاء الاصطناعي لتقليل البصمة الكربونية والمساهمة في بيئة أنظف.",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600",
+    title: "وحدة غسيل الكربون الاحترافية",
+    description: "تقنية متطورة لإجراء دورة غسيل كاملة للمحرك والبساتم، تعمل على إزالة الرواسب الكربونية المتراكمة دون فك المحرك، مما يعيد للسيارة عزمها الأصلي ونعومة صوتها.",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=600",
   },
   {
     id: 3,
-    title: "إدارة الوقود الذكية",
-    description: "استخدام تقنيات التنبؤ الذكي لزيادة كفاءة استهلاك البنزين والغاز الطبيعي للمحركات الحديثة والتقليدية.",
-    image: "https://images.unsplash.com/photo-1709536240401-ae8f6ca55e18?q=80&w=800&auto=format&fit=crop",
+    title: "تحسين الانبعاثات والبيئة",
+    description: "مع PureTech، نضمن لك تقليل الأدخنة الضارة والانبعاثات الكربونية، مما يساهم في الحفاظ على نظافة البيئة وإطالة عمر علبة البيئة (الشكمان).",
+    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=600",
   },
   {
     id: 4,
-    title: "تنبؤ بالأعطال (AI) ",
-    description: "تقنيات الذكاء الاصطناعي التي تتنبأ بالأعطال قبل حدوثها، مما يوفر تكاليف الإصلاح ويطيل عمر المحرك.",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=600",
+    title: "حماية وإطالة عمر المحرك",
+    description: "بفضل الاحتراق النظيف ودورة الغسيل الدورية، يقل الضغط الحراري على أجزاء المحرك الداخلية، مما يقلل من احتمالية الأعطال المفاجئة ويوفر تكاليف الصيانة الباهظة.",
+    image: "https://images.unsplash.com/photo-1709536240401-ae8f6ca55e18?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
@@ -62,7 +62,17 @@ export default function Features({ onOpenContact }: FeaturesProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.4 }}
-                className="flex flex-col md:flex-row min-h-[400px]"
+                className="flex flex-col md:flex-row min-h-[400px] cursor-grab active:cursor-grabbing"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.8}
+                onDragEnd={(e, { offset }) => {
+                  if (offset.x < -50) {
+                    prevSlide();
+                  } else if (offset.x > 50) {
+                    nextSlide();
+                  }
+                }}
               >
                 <div className="md:w-1/2 relative h-64 md:h-auto">
                   <img

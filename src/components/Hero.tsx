@@ -11,7 +11,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1737364801834-944aa3beaefe?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         }}
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
@@ -25,10 +25,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl leading-tight">
-            وفر الطاقة بذكاء اصطناعي رائد
+            قوة الهيدروجين.. مستقبل توفير الوقود مع PureTech
           </h1>
           <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto font-medium">
-            حلول PureTech المعتمدة على الذكاء الاصطناعي (AI) لتحسين كفاءة الاحتراق وتقليل الانبعاثات
+            بتقنية حقن الهيدروجين المتطورة مع البنزين، استمتع باحتراق مثالي، أداء أقوى للمحرك، وتوفير حقيقي في الاستهلاك
           </p>
 
 
