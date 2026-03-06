@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-slate-400 text-xs mt-4">
-          <p>© 2026 puretech.vercel.app | جميع الحقوق محفوظة لبيورتك</p>
+          <p>© 2026 pure-techeg.vercel.app/ | جميع الحقوق محفوظة لبيورتك</p>
         </div>
       </div>
     </footer>
